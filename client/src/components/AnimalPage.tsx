@@ -65,7 +65,7 @@ const AnimalPage: React.FC<AnimalPageProps> = ({
   const handleSaveFavorite = async (comment: string) => {
     if (imageUrl) {
       try {
-        await fetch('http://localhost:3001/api/favorites', {
+        await fetch(`${import.meta.env.VITE_API_URL}/api/favorites`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ imageUrl, comment })
